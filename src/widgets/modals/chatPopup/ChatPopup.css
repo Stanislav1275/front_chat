@@ -1,0 +1,13 @@
+.chatPopup {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+#pr_id_2 {
+  z-index: 100;
+  background-color: red !important;
+}
+
+/*# sourceMappingURL=ChatPopup.css.map */

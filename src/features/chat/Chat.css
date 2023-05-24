@@ -1,0 +1,9 @@
+.chat {
+  display: flex;
+  justify-content: space-around;
+}
+.chat .typeMessage {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=Chat.css.map */

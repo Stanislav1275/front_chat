@@ -1,0 +1,93 @@
+$gray: #eee;
+$black: #1a1a1a;
+$primary_font_black: #00022c;
+$bgc_gray: #e8e8e8;
+$font_blueblack : rgb(1, 16, 103);
+$font_blue :rgb(20,0,75);
+@mixin primaryFont(){
+  font-family: var(--font-family);
+}
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+.fluid-font-size {
+  font-size: calcFluidFontSize(10, 15, 480, 1280);
+}
+
+//
+//.fluid-font-size {
+//  @include fluidFontSize(16px, 24px, 480px, 1280px, 18px);
+//}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  position: relative;
+
+}
+body{
+  position: relative;
+}
+:root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color:$font_blueblack;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+
+

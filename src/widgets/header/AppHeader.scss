@@ -1,0 +1,49 @@
+@import "src/app/styles/index";
+.headerWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+.appheader{
+  min-width: 60%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  //padding: 0 3em;
+  display: flex;
+  align-items: center;
+  color: black;
+  @include primaryFont();
+  font-size: 12px;
+  flex: 0 0 75px;
+
+  @media  screen and (max-width: 420px) {
+    flex-direction: column;
+
+  }
+  &__logo{
+  }
+  &__left{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 420px) {
+      width: 100%;
+      justify-content: center;
+
+    }
+  }
+  &__right{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media screen and (max-width:250px) {
+
+
+  }
+
+}
